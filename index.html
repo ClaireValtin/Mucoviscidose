@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Fiche de référence : mucoviscidose et gène CFTR, physiopathologie, signes d'appel, test de la sueur, diagnostic génétique, traitement.">
+<title>Mucoviscidose et CFTR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky section index on the left, one reading column (~70ch) on the right; stacks to a single column with a scrolling chip index on phones. */
+:root{
+  --bg:#eef2f1; --surface:#f9fbfa; --surface-2:#e3e9e7; --ink:#142120; --muted:#52615e; --line:#cdd7d4;
+  --accent:#0b7566; --accent-ink:#085a4f; --accent-soft:#d3ebe6;
+  --contrast:#c4510f; --contrast-soft:#f8e5d7;
+  --ev-h:#0b6b5d; --ev-h-bg:#d6ece7; --ev-a:#7d5200; --ev-a-bg:#f6e8c8; --ev-d:#4f5a57; --ev-d-bg:#e1e7e5;
+  --ok:#2f8f4e; --mid:#d19a12; --high:#c8462a;
+  --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  --scale:1;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1514; --surface:#161e1d; --surface-2:#1f2a28; --ink:#e4ebe9; --muted:#9aaaa6; --line:#2c3a37;
+    --accent:#f0883e; --accent-ink:#f6a466; --accent-soft:#3a2616;
+    --contrast:#46cbb2; --contrast-soft:#12302b;
+    --ev-h:#5fd0bb; --ev-h-bg:#143029; --ev-a:#e8bb5a; --ev-a-bg:#33280f; --ev-d:#a8b4b1; --ev-d-bg:#252f2d;
+    --ok:#55c27a; --mid:#e6b43a; --high:#f0694a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1514; --surface:#161e1d; --surface-2:#1f2a28; --ink:#e4ebe9; --muted:#9aaaa6; --line:#2c3a37;
+  --accent:#f0883e; --accent-ink:#f6a466; --accent-soft:#3a2616;
+  --contrast:#46cbb2; --contrast-soft:#12302b;
+  --ev-h:#5fd0bb; --ev-h-bg:#143029; --ev-a:#e8bb5a; --ev-a-bg:#33280f; --ev-d:#a8b4b1; --ev-d-bg:#252f2d;
+  --ok:#55c27a; --mid:#e6b43a; --high:#f0694a;
+  color-scheme:dark;
+}
+
+html{font-size:calc(17px * var(--scale)); scroll-behavior:smooth; scroll-padding-top:4.5rem}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg); color:var(--ink); font-family:var(--f-body); line-height:1.6; -webkit-font-smoothing:antialiased}
+a{color:var(--accent-ink); text-underline-offset:2px}
+a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:3px}
+h1,h2,h3{font-family:var(--f-display); line-height:1.15; text-wrap:balance; margin:0}
+h2{font-size:1.75rem; font-weight:800; letter-spacing:-.01em}
+h3{font-size:1.15rem; font-weight:600; margin-top:.25rem}
+p{margin:0}
+.mono{font-family:var(--f-mono); font-size:.86em}
+sup.r{font-size:.68em; line-height:0; white-space:nowrap}
+sup.r a{text-decoration:none; color:var(--muted); font-family:var(--f-mono)}
+sup.r a:hover{color:var(--accent-ink)}
+
+/* top bar */
+.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:20; background:var(--bg); border-bottom:1px solid var(--line)}
+.top-in{max-width:1240px; margin:0 auto; padding:.6rem 20px; display:flex; align-items:center; gap:1rem; justify-content:space-between; flex-wrap:wrap}
+.brand{font-family:var(--f-mono); font-size:.8rem; color:var(--muted); letter-spacing:.04em}
+.brand b{color:var(--ink); font-weight:500}
+.ctrl{display:flex; gap:.4rem; align-items:center; flex-wrap:wrap}
+.ctrl button{font:inherit; font-size:.8rem; background:var(--surface); color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:.3rem .65rem; cursor:pointer}
+.ctrl button:hover{border-color:var(--accent)}
+.ctrl .lbl{font-size:.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-left:.4rem}
+
+/* shell */
+.shell{max-width:1240px; margin:0 auto; padding-inline:20px; padding-block:2rem 4rem; display:grid; grid-template-columns:230px minmax(0,1fr); gap:3rem}
+nav.toc{position:sticky; top:calc(env(safe-area-inset-top,0px) + 4rem); align-self:start; font-size:.88rem}
+nav.toc p{font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:.6rem}
+nav.toc ol{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.1rem; border-left:1px solid var(--line)}
+nav.toc a{display:block; padding:.3rem .8rem; color:var(--muted); text-decoration:none; border-left:2px solid transparent; margin-left:-1px}
+nav.toc a:hover{color:var(--ink)}
+nav.toc a.active{color:var(--ink); border-left-color:var(--accent); font-weight:700}
+main{min-width:0; display:flex; flex-direction:column; gap:4rem}
+section{display:flex; flex-direction:column; gap:1.1rem; max-width:46rem}
+section.wide{max-width:none}
+.eyebrow{font-family:var(--f-mono); font-size:.74rem; text-transform:uppercase; letter-spacing:.1em; color:var(--accent-ink)}
+.prose{display:flex; flex-direction:column; gap:.85rem}
+.prose ul{margin:0; padding-left:1.2rem; display:flex; flex-direction:column; gap:.35rem}
+
+/* hero */
+.hero{display:flex; flex-direction:column; gap:1.2rem; max-width:52rem}
+.hero h1{font-size:clamp(2.2rem, 5vw, 3.6rem); font-weight:800; letter-spacing:-.02em}
+.hero h1 span{color:var(--accent)}
+.lede{font-size:1.12rem; color:var(--ink); max-width:40rem}
+.meta{font-size:.85rem; color:var(--muted)}
+.facts{display:grid; grid-template-columns:repeat(6, minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden; margin:0}
+.facts div{background:var(--surface); padding:.75rem .9rem; display:flex; flex-direction:column; gap:.15rem}
+.facts dt{font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted)}
+.facts dd{margin:0; font-family:var(--f-mono); font-size:.95rem; font-weight:500}
+.legend{display:flex; flex-wrap:wrap; gap:.5rem 1rem; align-items:center; font-size:.85rem; color:var(--muted)}
+
+/* evidence badges */
+.ev{display:inline-block; font-family:var(--f-mono); font-size:.68rem; letter-spacing:.04em; text-transform:uppercase; padding:.12rem .45rem; border-radius:4px; vertical-align:.12em; white-space:nowrap; font-weight:500}
+.ev-h{color:var(--ev-h); background:var(--ev-h-bg)}
+.ev-a{color:var(--ev-a); background:var(--ev-a-bg)}
+.ev-d{color:var(--ev-d); background:var(--ev-d-bg); outline:1px dashed var(--ev-d); outline-offset:-1px}
+
+/* callouts */
+.flag{border:1px dashed var(--contrast); background:var(--contrast-soft); border-radius:10px; padding:1rem 1.1rem; display:flex; flex-direction:column; gap:.6rem}
+.flag .tag{font-family:var(--f-mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--contrast)}
+.note{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:1rem 1.1rem; display:flex; flex-direction:column; gap:.5rem}
+
+/* organ grid */
+.organs{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:1rem}
+.organ{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:1rem 1.1rem; display:flex; flex-direction:column; gap:.5rem; min-width:0}
+.organ h3{display:flex; flex-wrap:wrap; gap:.4rem; align-items:baseline}
+.organ p{font-size:.95rem}
+
+/* tables */
+.tw{overflow-x:auto; border:1px solid var(--line); border-radius:10px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:.9rem; min-width:36rem}
+th,td{text-align:left; vertical-align:top; padding:.6rem .8rem; border-bottom:1px solid var(--line)}
+th{font-size:.72rem; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); font-weight:700; background:var(--surface-2)}
+tr:last-child td{border-bottom:0}
+td .mono{white-space:nowrap}
+
+/* figure */
+figure{margin:0; display:flex; flex-direction:column; gap:.5rem}
+.fig{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:.8rem; overflow-x:auto}
+.fig svg{display:block; width:100%; min-width:520px; height:auto}
+figcaption{font-size:.85rem; color:var(--muted)}
+svg .t{fill:var(--ink); font-family:var(--f-mono); font-size:13px}
+svg .ts{fill:var(--muted); font-family:var(--f-body); font-size:12px}
+svg .td{fill:var(--ink); font-family:var(--f-display); font-weight:600; font-size:15px}
+svg .mem{fill:var(--surface-2); stroke:none}
+svg .memline{stroke:var(--line); stroke-width:1.5; fill:none}
+svg .helix{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.5}
+svg .loop{fill:none; stroke:var(--accent); stroke-width:1.5}
+svg .nbd{fill:var(--accent-soft); stroke:var(--accent); stroke-width:1.5}
+svg .rdom{fill:var(--surface-2); stroke:var(--muted); stroke-width:1.5; stroke-dasharray:4 3}
+svg .mk{fill:var(--contrast); stroke:var(--surface); stroke-width:2}
+svg .lead{stroke:var(--contrast); stroke-width:1; fill:none}
+
+/* timeline */
+.ages{display:grid; gap:0; border-left:2px solid var(--line); margin-left:.4rem}
+.age{position:relative; padding:0 0 1.2rem 1.4rem; display:flex; flex-direction:column; gap:.35rem}
+.age::before{content:""; position:absolute; left:-7px; top:.35rem; width:12px; height:12px; border-radius:50%; background:var(--surface); border:2px solid var(--accent)}
+.age h3{font-size:1.02rem}
+.age ul{margin:0; padding-left:1.1rem; display:flex; flex-direction:column; gap:.25rem; font-size:.95rem}
+
+/* sweat gauge */
+.sweat{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:1.2rem; display:flex; flex-direction:column; gap:1.1rem}
+.sweat-head{display:flex; flex-wrap:wrap; gap:1rem; align-items:flex-end; justify-content:space-between}
+.sweat-head label{font-size:.8rem; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); display:block; margin-bottom:.3rem}
+.sweat-head input{font-family:var(--f-mono); font-size:1.4rem; width:7rem; padding:.35rem .55rem; border:1px solid var(--line); border-radius:8px; background:var(--bg); color:var(--ink)}
+.sweat-head .unit{font-family:var(--f-mono); color:var(--muted); margin-left:.4rem}
+.sweat-head .ex{font-size:.78rem; color:var(--muted)}
+.gauge{padding-top:2rem}
+.track{position:relative; height:16px; border-radius:8px; display:flex; overflow:visible}
+.track .z{height:100%}
+.track .z:first-child{border-radius:8px 0 0 8px}
+.track .z:nth-child(3){border-radius:0 8px 8px 0}
+.z-ok{background:var(--ok)} .z-mid{background:var(--mid)} .z-high{background:var(--high)}
+.marker{position:absolute; top:-30px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:2px; transition:left .25s ease}
+@media (prefers-reduced-motion: reduce){.marker{transition:none}}
+.marker b{font-family:var(--f-mono); font-size:.78rem; background:var(--ink); color:var(--bg); padding:.05rem .4rem; border-radius:4px; white-space:nowrap}
+.marker i{display:block; width:3px; height:30px; background:var(--ink); border-radius:2px}
+.ticks{position:relative; height:1.4rem; font-family:var(--f-mono); font-size:.75rem; color:var(--muted); margin-top:.3rem}
+.ticks span{position:absolute; transform:translateX(-50%)}
+.ticks span:first-child{transform:none}
+.ticks span:last-child{transform:translateX(-100%)}
+.zones{display:grid; grid-template-columns:1fr 1fr 2fr; gap:.6rem; font-size:.85rem}
+.zones div{display:flex; flex-direction:column; gap:.1rem; min-width:0}
+.zones b{font-family:var(--f-mono); font-size:.8rem}
+.verdict{border-radius:8px; padding:.8rem 1rem; background:var(--surface-2); font-size:.95rem}
+.verdict strong{font-family:var(--f-display)}
+
+/* flow */
+.flow{display:flex; flex-direction:column; gap:0; align-items:stretch}
+.fbox{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:.75rem 1rem; font-size:.92rem; display:block}
+.fbox.key{border:2px solid var(--accent)}
+.fbox .k{display:block; margin-bottom:.25rem; font-family:var(--f-mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.07em; color:var(--muted)}
+.fbox .cut{display:block; margin-bottom:.25rem}
+.down{height:1.4rem; display:flex; justify-content:center}
+.down::before{content:""; width:2px; background:var(--muted)}
+.branches{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:.8rem}
+.branch{display:flex; flex-direction:column; gap:0; min-width:0}
+.branch .cut{font-family:var(--f-mono); font-weight:500; font-size:.95rem}
+.b-high .cut{color:var(--high)} .b-mid .cut{color:var(--mid)} .b-ok .cut{color:var(--ok)}
+.b-high > .fbox:first-child{border-top:4px solid var(--high)}
+.b-mid > .fbox:first-child{border-top:4px solid var(--mid)}
+.b-ok > .fbox:first-child{border-top:4px solid var(--ok)}
+
+/* uncertainty list */
+.unc{counter-reset:u; list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.6rem}
+.unc li{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:.7rem .9rem; font-size:.94rem}
+
+/* references */
+ol.refs{margin:0; padding-left:2.4rem; display:flex; flex-direction:column; gap:.45rem; font-size:.85rem; color:var(--muted)}
+ol.refs li{padding-left:.2rem}
+ol.refs li:target{background:var(--accent-soft); color:var(--ink); border-radius:4px}
+ol.refs a{word-break:break-word}
+footer{font-size:.8rem; color:var(--muted); border-top:1px solid var(--line); padding-top:1rem}
+
+@media (max-width: 1100px){
+  .facts{grid-template-columns:repeat(3, minmax(0,1fr))}
+}
+@media (max-width: 900px){
+  .shell{grid-template-columns:minmax(0,1fr); gap:1.5rem; padding-block:1rem 3rem}
+  nav.toc{position:static; margin-inline:-20px; padding:.4rem 20px; border-bottom:1px solid var(--line)}
+  nav.toc p{display:none}
+  nav.toc ol{flex-direction:row; overflow-x:auto; border-left:0; gap:.3rem; scrollbar-width:none}
+  nav.toc a{white-space:nowrap; border:1px solid var(--line); border-radius:999px; padding:.2rem .7rem; margin:0; font-size:.8rem}
+  nav.toc a.active{border-color:var(--accent); background:var(--accent-soft)}
+}
+@media (max-width: 480px){
+  .brand{display:none}
+  .ctrl .lbl{display:none}
+  .top-in{justify-content:flex-end}
+}
+@media (max-width: 640px){
+  .organs{grid-template-columns:minmax(0,1fr)}
+  .branches{grid-template-columns:minmax(0,1fr)}
+  .zones{grid-template-columns:minmax(0,1fr); }
+  .facts{grid-template-columns:repeat(2, minmax(0,1fr))}
+  h2{font-size:1.5rem}
+  .top-in{padding-inline:16px}
+  .shell{padding-inline:16px}
+  nav.toc{margin-inline:-16px; padding-inline:16px}
+}
+
+/* base standalone */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand"><b>CFTR</b> · 7q31.2 · OMIM 602421</div>
+    <div class="ctrl" role="group" aria-label="Affichage">
+      <span class="lbl">Thème</span>
+      <button type="button" id="btn-theme" aria-label="Changer de thème">Système</button>
+      <span class="lbl">Texte</span>
+      <button type="button" id="btn-minus" aria-label="Réduire la taille du texte">A−</button>
+      <button type="button" id="btn-plus" aria-label="Agrandir la taille du texte">A+</button>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="toc" aria-label="Sommaire">
+    <p>Sommaire</p>
+    <ol>
+      <li><a href="#gene">Gène et protéine</a></li>
+      <li><a href="#physio">Physiopathologie</a></li>
+      <li><a href="#suspecter">Quand suspecter</a></li>
+      <li><a href="#sueur">Test de la sueur</a></li>
+      <li><a href="#bilan">Bilan à prescrire</a></li>
+      <li><a href="#algo">Démarche diagnostique</a></li>
+      <li><a href="#genetique">Diagnostic génétique</a></li>
+      <li><a href="#traitement">Traitement</a></li>
+      <li><a href="#incertitudes">Points d'incertitude</a></li>
+      <li><a href="#refs">Références</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <div class="hero">
+      <div class="eyebrow">Génétique médicale · fiche de référence</div>
+      <h1>Mucoviscidose et gène <span>CFTR</span></h1>
+      <p class="lede">Du gène à la prise en charge : physiopathologie, signes d'appel cliniques et paracliniques, test de la sueur et sa signification, diagnostic génétique et traitement.</p>
+      <dl class="facts">
+        <div><dt>Locus</dt><dd>7q31.2</dd></div>
+        <div><dt>Exons</dt><dd>27</dd></div>
+        <div><dt>Protéine</dt><dd>1 480 aa</dd></div>
+        <div><dt>Transmission</dt><dd>AR</dd></div>
+        <div><dt>Transcrit</dt><dd>NM_000492.4</dd></div>
+        <div><dt>OMIM maladie</dt><dd>219700</dd></div>
+      </dl>
+      <div class="legend">
+        <span>Niveau de preuve signalé dans le texte :</span>
+        <span><span class="ev ev-h">Humain</span> données chez l'homme</span>
+        <span><span class="ev ev-a">Modèle animal</span> non transposable tel quel</span>
+        <span><span class="ev ev-d">Débattu</span> pas de consensus</span>
+      </div>
+      <p class="meta">Sources vérifiées le 10 octobre 2026. Chaque affirmation renvoie à une référence numérotée en bas de page.</p>
+    </div>
+
+    <!-- ============ GENE ============ -->
+    <section id="gene">
+      <div class="eyebrow">Génétique moléculaire</div>
+      <h2>Le gène CFTR et sa protéine</h2>
+      <div class="prose">
+        <p><i>CFTR</i> code un membre de la superfamille des transporteurs ABC (alias <span class="mono">ABCC7</span>), le seul de cette famille à fonctionner comme un canal ionique. La protéine contrôle la sécrétion et l'absorption d'ions et d'eau dans les épithéliums. Son ouverture suit des cycles de phosphorylation du domaine régulateur R, puis de fixation et d'hydrolyse d'ATP par les deux domaines de liaison des nucléotides (NBD).<sup class="r"><a href="#r12">[12]</a></sup></p>
+        <p>C'est un canal anionique apical qui conduit le chlorure et le bicarbonate.<sup class="r"><a href="#r21">[21]</a><a href="#r22">[22]</a></sup> La structure prédite dès le clonage comporte deux domaines transmembranaires de 6 hélices, deux NBD et un domaine R.<sup class="r"><a href="#r13">[13]</a></sup></p>
+      </div>
+
+      <figure>
+        <div class="fig">
+          <svg viewBox="0 0 720 300" role="img" aria-labelledby="topo-t">
+            <title id="topo-t">Topologie schématique de la protéine CFTR avec positions de variants fréquents</title>
+            <text class="ts" x="700" y="58" text-anchor="end">Extracellulaire</text>
+            <text class="ts" x="700" y="178" text-anchor="end">Cytoplasme</text>
+            <rect class="mem" x="40" y="82" width="560" height="56" rx="4"/>
+            <line class="memline" x1="40" y1="82" x2="600" y2="82"/>
+            <line class="memline" x1="40" y1="138" x2="600" y2="138"/>
+            <text class="ts" x="714" y="115" text-anchor="end">Membrane apicale</text>
+            <text class="td" x="152" y="24" text-anchor="middle">MSD1</text>
+            <text class="td" x="512" y="24" text-anchor="middle">MSD2</text>
+            <!-- MSD1 loops -->
+            <path class="loop" d="M77 74 Q92 46 107 74"/>
+            <path class="loop" d="M137 74 Q152 46 167 74"/>
+            <path class="loop" d="M197 74 Q212 46 227 74"/>
+            <path class="loop" d="M107 146 Q122 170 137 146"/>
+            <path class="loop" d="M167 146 Q182 170 197 146"/>
+            <!-- MSD1 helices -->
+            <rect class="helix" x="70" y="74" width="14" height="72" rx="5"/>
+            <rect class="helix" x="100" y="74" width="14" height="72" rx="5"/>
+            <rect class="helix" x="130" y="74" width="14" height="72" rx="5"/>
+            <rect class="helix" x="160" y="74" width="14" height="72" rx="5"/>
+            <rect class="helix" x="190" y="74" width="14" height="72" rx="5"/>
+            <rect class="helix" x="220" y="74" width="14" height="72" rx="5"/>
+            <!-- MSD2 loops -->
+            <path class="loop" d="M437 74 Q452 46 467 74"/>
+            <path class="loop" d="M497 74 Q512 46 527 74"/>
+            <path class="loop" d="M557 74 Q572 46 587 74"/>
+            <path class="loop" d="M467 146 Q482 170 497 146"/>
+            <path class="loop" d="M527 146 Q542 170 557 146"/>
+            <rect class="helix" x="430" y="74" width="14" height="72" rx="5"/>
+            <rect class="helix" x="460" y="74" width="14" height="72" rx="5"/>
+            <rect class="helix" x="490" y="74" width="14" height="72" rx="5"/>
+            <rect class="helix" x="520" y="74" width="14" height="72" rx="5"/>
+            <rect class="helix" x="550" y="74" width="14" height="72" rx="5"/>
+            <rect class="helix" x="580" y="74" width="14" height="72" rx="5"/>
+            <!-- connectors -->
+            <path class="loop" d="M77 146 C72 175 62 185 56 196"/>
+            <text class="t" x="44" y="212">N</text>
+            <path class="loop" d="M227 146 C245 168 228 182 214 192"/>
+            <path class="loop" d="M252 222 C268 222 278 224 290 225"/>
+            <path class="loop" d="M380 225 C410 222 432 186 437 146"/>
+            <path class="loop" d="M587 146 C605 168 590 182 576 192"/>
+            <path class="loop" d="M622 222 C640 230 648 240 652 250"/>
+            <text class="t" x="656" y="266">C</text>
+            <!-- domains -->
+            <ellipse class="nbd" cx="190" cy="222" rx="62" ry="30"/>
+            <text class="td" x="190" y="227" text-anchor="middle">NBD1</text>
+            <rect class="rdom" x="290" y="203" width="90" height="44" rx="22"/>
+            <text class="td" x="335" y="230" text-anchor="middle">R</text>
+            <ellipse class="nbd" cx="560" cy="222" rx="62" ry="30"/>
+            <text class="td" x="560" y="227" text-anchor="middle">NBD2</text>
+            <!-- variant markers -->
+            <path class="lead" d="M92 60 L40 40"/>
+            <circle class="mk" cx="92" cy="60" r="6"/>
+            <text class="t" x="6" y="34">R117H · IV</text>
+            <path class="lead" d="M150 210 L112 270"/>
+            <circle class="mk" cx="150" cy="210" r="6"/>
+            <text class="t" x="70" y="286">F508del · II</text>
+            <path class="lead" d="M228 236 L236 270"/>
+            <circle class="mk" cx="228" cy="236" r="6"/>
+            <text class="t" x="196" y="286">G551D · III</text>
+            <path class="lead" d="M522 236 L500 270"/>
+            <circle class="mk" cx="522" cy="236" r="6"/>
+            <text class="t" x="440" y="286">N1303K · II</text>
+            <path class="lead" d="M598 236 L612 270"/>
+            <circle class="mk" cx="598" cy="236" r="6"/>
+            <text class="t" x="574" y="286">W1282X · I</text>
+          </svg>
+        </div>
+        <figcaption>Schéma non à l'échelle. MSD : domaine transmembranaire (6 hélices chacun) ; NBD : domaine de liaison des nucléotides ; R : domaine régulateur. Points orange : variants fréquents avec leur classe fonctionnelle.<sup class="r"><a href="#r13">[13]</a><a href="#r17">[17]</a></sup> Position par domaine indicative.</figcaption>
+      </figure>
+
+      <div class="note">
+        <h3>Repères pour le laboratoire</h3>
+        <div class="prose" style="font-size:.93rem">
+          <ul>
+            <li>Coordonnées GRCh38 : <span class="mono">chr7:117 480 025–117 668 665</span> (environ 189 kb) ; GRCh37 : <span class="mono">chr7:117 120 079–117 308 719</span>.<sup class="r"><a href="#r12">[12]</a></sup></li>
+            <li>Plusieurs pseudogènes de <i>CFTR</i> existent dans le génome humain.<sup class="r"><a href="#r12">[12]</a></sup></li>
+            <li>Séquences de référence utilisées par GeneReviews : <span class="mono">NM_000492.4</span> / <span class="mono">NP_000483.3</span> ; UniProt <span class="mono">P13569</span>.<sup class="r"><a href="#r1">[1]</a></sup></li>
+            <li>Bases utiles : CFTR2 (statut clinique des variants), ClinVar, base CFTR-France (schéma des 27 exons avec numérotation usuelle et HGVS).<sup class="r"><a href="#r14">[14]</a><a href="#r40">[40]</a></sup></li>
+            <li>Entrées OMIM associées : 219700 (mucoviscidose), 277180 (agénésie bilatérale des canaux déférents), 211400 (bronchectasies avec ou sans chlorure sudoral élevé).<sup class="r"><a href="#r12">[12]</a></sup></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Classes fonctionnelles des variants</h3>
+      <p>La classification historique en six classes a été complétée par une classe VII (absence d'ARNm).<sup class="r"><a href="#r16">[16]</a><a href="#r18">[18]</a></sup> Les classes ne sont pas exclusives : F508del associe un défaut de maturation (classe II) et un défaut d'ouverture du canal (classe III).<sup class="r"><a href="#r41">[41]</a></sup></p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Classe</th><th>Défaut</th><th>Exemples</th><th>Phénotype habituel</th><th>Stratégie ciblée</th></tr></thead>
+          <tbody>
+            <tr><td><b>I</b></td><td>Pas de synthèse protéique (non-sens, décalage du cadre, épissage canonique)</td><td><span class="mono">G542X, R553X, W1282X</span></td><td>Sévère</td><td>Agents de translecture (en recherche)</td></tr>
+            <tr><td><b>II</b></td><td>Repliement et adressage à la membrane défectueux</td><td><span class="mono">F508del, N1303K, I507del</span></td><td>Sévère</td><td>Correcteurs</td></tr>
+            <tr><td><b>III</b></td><td>Ouverture (gating) défectueuse</td><td><span class="mono">G551D, S549N</span></td><td>Sévère</td><td>Potentiateurs</td></tr>
+            <tr><td><b>IV</b></td><td>Conductance réduite</td><td><span class="mono">R117H, R347P, D1152H</span></td><td>Modéré</td><td>Potentiateurs</td></tr>
+            <tr><td><b>V</b></td><td>Quantité réduite de protéine normale (épissage)</td><td><span class="mono">3849+10kbC&gt;T, A455E</span></td><td>Modéré</td><td>Potentiateurs, correcteurs, oligonucléotides antisens</td></tr>
+            <tr><td><b>VI</b></td><td>Instabilité à la surface cellulaire</td><td><span class="mono">N287Y</span></td><td>Variable</td><td>Stabilisateurs (en recherche)</td></tr>
+            <tr><td><b>VII</b></td><td>Absence d'ARNm (grandes délétions)</td><td><span class="mono">CFTRdele2,3 (21 kb)</span></td><td>Sévère</td><td>Approches génétiques (en recherche)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="meta">Sources : classes I–VI et exemples<sup class="r"><a href="#r17">[17]</a></sup> ; classes VI–VII<sup class="r"><a href="#r16">[16]</a><a href="#r18">[18]</a></sup>. Le nom historique <span class="mono">3849+10kbC&gt;T</span> correspond à <span class="mono">c.3718-2477C&gt;T</span>.<sup class="r"><a href="#r1">[1]</a></sup></p>
+
+      <h3>Statut clinique d'un variant (CFTR2)</h3>
+      <div class="prose">
+        <p>CFTR2 classe les variants en quatre catégories : <b>CF-causing</b> (cause la maladie en trans d'un autre variant CF-causing), <b>à conséquence clinique variable</b> (VVCC), <b>non CF-causing</b> et <b>de signification inconnue</b>.<sup class="r"><a href="#r15">[15]</a></sup> Après la mise à jour de 2024, CFTR2 comptait 1 085 variants CF-causing et 55 VVCC.<sup class="r"><a href="#r15">[15]</a></sup> La base a été mise à jour de nouveau le 30 janvier 2026 ; vérifier les chiffres et le statut de chaque variant en ligne.<sup class="r"><a href="#r14">[14]</a></sup></p>
+        <p>Deux variants CF-causing en trans apportent une preuve suffisante de dysfonction CFTR. Un génotype comportant un VVCC ou un variant de signification inconnue peut ne pas donner de mucoviscidose ; d'autres tests de la fonction CFTR aident alors à conclure.<sup class="r"><a href="#r4">[4]</a></sup> En clinique, « pathogène » et « probablement pathogène » (ACMG/AMP) sont traités comme équivalents ; deux VUS, ou un variant CF-causing avec une VUS, n'établissent ni n'excluent le diagnostic.<sup class="r"><a href="#r1">[1]</a></sup></p>
+      </div>
+    </section>
+
+    <!-- ============ PHYSIO ============ -->
+    <section id="physio" class="wide">
+      <div class="eyebrow">Physiopathologie</div>
+      <h2>De la dysfonction CFTR à l'atteinte multiviscérale</h2>
+      <div class="prose" style="max-width:46rem">
+        <p>Dans la plupart des organes, le défaut de transport transépithélial de chlorure empêche l'appel d'eau : les sécrétions s'épaississent, obstruent les canaux et lèsent les tissus.<sup class="r"><a href="#r1">[1]</a></sup> La maladie touche les épithéliums respiratoires, le pancréas exocrine, l'intestin, le système hépatobiliaire, l'appareil génital et les glandes sudorales ; l'atteinte pulmonaire est la principale cause de morbidité et de mortalité.<sup class="r"><a href="#r1">[1]</a></sup></p>
+      </div>
+
+      <div class="organs">
+        <div class="organ">
+          <h3>Glande sudorale <span class="ev ev-h">Humain</span></h3>
+          <p>Le fonctionnement est inversé par rapport aux autres organes : dans le canal sudoral, CFTR sert à <b>réabsorber</b> le chlorure (et donc le NaCl). Sans CFTR fonctionnel, le chlorure n'est pas réabsorbé et la sueur reste salée.<sup class="r"><a href="#r1">[1]</a></sup> La microperfusion de canaux sudoraux humains isolés a montré une imperméabilité au chlorure chez les patients.<sup class="r"><a href="#r19">[19]</a></sup> C'est la base physiologique du test de la sueur.</p>
+        </div>
+        <div class="organ">
+          <h3>Voies respiratoires <span class="ev ev-h">Humain</span></h3>
+          <p>Le défaut de transport ionique altère le liquide de surface des voies aériennes (mécanisme précis discuté, voir l'encadré) ; le mucus épaissi favorise l'infection, et la réaction des polynucléaires entretient un cercle obstruction, infection, inflammation qui aboutit aux bronchectasies, détectables dès l'âge de 10 semaines.<sup class="r"><a href="#r1">[1]</a></sup> Germes caractéristiques : <i>S. aureus</i> (dont SARM), <i>H. influenzae</i>, <i>P. aeruginosa</i>, <i>Stenotrophomonas</i>, <i>Achromobacter</i>, mycobactéries non tuberculeuses ; aspergillose bronchopulmonaire allergique.<sup class="r"><a href="#r1">[1]</a></sup> L'événement initial reste discuté (encadré ci-dessous).</p>
+        </div>
+        <div class="organ">
+          <h3>Pancréas exocrine <span class="ev ev-h">Humain</span></h3>
+          <p>Les sécrétions obstruent les canaux pancréatiques ; les enzymes autodigèrent la glande, qui se fibrose. Environ 85 % des patients ont une insuffisance pancréatique exocrine (stéatorrhée, dénutrition, retard de croissance). La pancréatite est plus fréquente avec des variants associés à une suffisance pancréatique (10,3 %) qu'avec des variants associés à une insuffisance (0,5 %).<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+        <div class="organ">
+          <h3>Intestin <span class="ev ev-h">Humain</span></h3>
+          <p>Iléus méconial néonatal, souvent chirurgical ; plus tard, rétention stercorale à prédominance gauche et syndrome d'obstruction intestinale distale ; aussi prolapsus rectal, invagination, obstruction appendiculaire. Risque accru de cancers digestifs (risque vie entière multiplié par 23).<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+        <div class="organ">
+          <h3>Foie et voies biliaires <span class="ev ev-h">Humain</span></h3>
+          <p>Spectre allant d'une élévation transitoire des transaminases à la cirrhose biliaire focale, avec hypertension portale possible. Atteinte hépatique cirrhotique 3,1 %, non cirrhotique 3,6 % ; cause de 3,2 % des décès (registre américain).<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+        <div class="organ">
+          <h3>Pancréas endocrine <span class="ev ev-h">Humain</span></h3>
+          <p>Le diabète lié à la mucoviscidose (CFRD) touche environ 20 % des adolescents et 50 % des adultes. Il est distinct des diabètes de type 1 et 2 : perte d'îlots (insuline et glucagon), insulinorésistance fluctuante liée à l'inflammation, troubles digestifs et hépatiques associés.<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+        <div class="organ">
+          <h3>Appareil génital <span class="ev ev-h">Humain</span></h3>
+          <p>La plupart des hommes atteints ont une agénésie bilatérale des canaux déférents avec azoospermie obstructive ; la spermatogenèse est souvent normale, d'où une infertilité sans stérilité, accessible à l'AMP. Chez la femme, le mucus cervical épais réduit la fertilité dans certains cas.<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+        <div class="organ">
+          <h3>Perte de sel <span class="ev ev-h">Humain</span></h3>
+          <p>Les pertes sudorales de NaCl exposent à une déshydratation hyponatrémique et hypochlorémique, et à une alcalose métabolique chronique. Le risque est maximal chez le nourrisson, lors de sudation, vomissements ou diarrhée, et en climat chaud et humide.<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+      </div>
+
+      <div class="flag" style="max-width:46rem">
+        <div class="tag">Point d'incertitude · mécanisme initial de l'atteinte pulmonaire</div>
+        <p>Il n'existe pas de modèle unifié démontré chez l'homme. Les deux hypothèses principales reposent surtout sur des modèles animaux, et une partie des données humaines les contredit.</p>
+        <div class="prose" style="font-size:.95rem">
+          <p><b>Déshydratation par hyperabsorption de sodium (ENaC).</b> Des souris surexprimant ENaC dans les voies aériennes développent déplétion du liquide de surface, stase du mucus et une maladie pulmonaire proche de la mucoviscidose <span class="ev ev-a">Modèle murin</span><sup class="r"><a href="#r20">[20]</a></sup>. Mais chez le porcelet <i>CFTR</i><sup>−/−</sup> nouveau-né, la perte du transport de Cl⁻ et HCO₃⁻ n'augmente ni l'absorption de Na⁺ ni l'absorption liquidienne <span class="ev ev-a">Modèle porcin</span><sup class="r"><a href="#r21">[21]</a></sup>.</p>
+          <p><b>Défaut de sécrétion de bicarbonate et acidification.</b> Chez le porc CF, le liquide de surface est plus acide et tue moins bien les bactéries ; alcaliniser restaure la bactéricidie <span class="ev ev-a">Modèle porcin</span><sup class="r"><a href="#r22">[22]</a></sup>. Chez l'enfant, des mesures in vivo par fibre optique ne trouvent pas de différence de pH entre enfants avec et sans mucoviscidose <span class="ev ev-h">Humain</span><sup class="r"><a href="#r23">[23]</a></sup>. Cette conclusion est elle-même contestée <span class="ev ev-d">Débattu</span><sup class="r"><a href="#r24">[24]</a></sup>.</p>
+          <p>Ce qui est établi chez l'homme : défaut de transport anionique, mucus épaissi, infection et inflammation précoces, bronchectasies dès la petite enfance.<sup class="r"><a href="#r1">[1]</a></sup> L'enchaînement exact des premières étapes reste ouvert.</p>
+        </div>
+      </div>
+
+      <div class="note" style="max-width:46rem">
+        <h3>Corrélations génotype–phénotype</h3>
+        <p style="font-size:.95rem">La corrélation la plus solide concerne la fonction pancréatique : les allèles associés à une suffisance pancréatique sont dominants pour ce phénotype. Au-delà, le génotype prédit mal le phénotype ; la sévérité pulmonaire varie beaucoup entre patients de même génotype (gènes modificateurs, environnement).<sup class="r"><a href="#r1">[1]</a></sup> CFTR2 fournit, par variant, chlorure sudoral, fonction respiratoire, statut pancréatique et taux d'infection à <i>Pseudomonas</i>, sans valeur prédictive individuelle.<sup class="r"><a href="#r14">[14]</a></sup></p>
+      </div>
+    </section>
+
+    <!-- ============ SUSPECTER ============ -->
+    <section id="suspecter">
+      <div class="eyebrow">Orientation diagnostique</div>
+      <h2>Quand suspecter une mucoviscidose</h2>
+      <p>Trois portes d'entrée selon le consensus : dépistage néonatal positif (trypsine immunoréactive élevée), signes cliniques évocateurs, ou atteinte d'un apparenté du premier degré, le plus souvent un membre de la fratrie.<sup class="r"><a href="#r1">[1]</a><a href="#r2">[2]</a></sup></p>
+
+      <h3>Signes cliniques selon l'âge</h3>
+      <div class="ages">
+        <div class="age">
+          <h3>Anténatal</h3>
+          <ul>
+            <li>Intestin hyperéchogène et/ou dilatation d'anses : risque de mucoviscidose de 0,5 à 9,9 % selon les séries.<sup class="r"><a href="#r1">[1]</a></sup></li>
+            <li>Vésicule biliaire non visualisée avec anomalies associées : risque multiplié par 16.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          </ul>
+        </div>
+        <div class="age">
+          <h3>Nouveau-né</h3>
+          <ul>
+            <li>Iléus méconial.<sup class="r"><a href="#r1">[1]</a></sup></li>
+            <li>Ictère néonatal prolongé.<sup class="r"><a href="#r1">[1]</a></sup></li>
+            <li>Trypsine immunoréactive élevée au dépistage, avec ou sans variant identifié : toute valeur hors norme impose un test de la sueur.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          </ul>
+        </div>
+        <div class="age">
+          <h3>Nourrisson et enfant</h3>
+          <ul>
+            <li>Toux grasse chronique, pneumopathies récidivantes, bronchectasies.<sup class="r"><a href="#r1">[1]</a></sup></li>
+            <li>Mauvaise prise pondérale, retard de croissance, stéatorrhée.<sup class="r"><a href="#r1">[1]</a></sup></li>
+            <li>Prolapsus rectal ; déshydratation hyponatrémique par temps chaud.<sup class="r"><a href="#r1">[1]</a></sup></li>
+            <li>Polypose nasale, hippocratisme digital.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          </ul>
+        </div>
+        <div class="age">
+          <h3>Adolescent et adulte</h3>
+          <ul>
+            <li>Bronchectasies, colonisation à <i>P. aeruginosa</i> ou autre bacille Gram négatif atypique, ABPA.<sup class="r"><a href="#r1">[1]</a></sup></li>
+            <li>Pancréatite aiguë récidivante ou chronique (peut être révélatrice chez l'enfant comme chez l'adulte).<sup class="r"><a href="#r1">[1]</a></sup></li>
+            <li>Azoospermie obstructive, agénésie des canaux déférents.<sup class="r"><a href="#r1">[1]</a></sup></li>
+            <li>Cirrhose biliaire, syndrome d'obstruction intestinale distale.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Signes paracliniques d'appel</h3>
+      <div class="prose">
+        <ul>
+          <li>Hyponatrémie, hypochlorémie, hypokaliémie, alcalose métabolique chronique ; hypoprotidémie.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li>Carence en vitamines liposolubles A, D, E, K.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li><i>P. aeruginosa</i> ou autre bacille Gram négatif atypique dans les sécrétions respiratoires.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li>Élastase fécale basse (insuffisance pancréatique exocrine).<sup class="r"><a href="#r1">[1]</a><a href="#r25">[25]</a></sup></li>
+          <li>Trypsine immunoréactive élevée au dépistage néonatal.<sup class="r"><a href="#r1">[1]</a></sup></li>
+        </ul>
+      </div>
+
+      <h3>Diagnostics différentiels génétiques</h3>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Entité</th><th>Gènes</th><th>Point commun</th><th>Ce qui distingue</th></tr></thead>
+          <tbody>
+            <tr><td>Dyskinésie ciliaire primitive</td><td>≈45 gènes (<span class="mono">DNAH5, CCDC39</span>…)</td><td>Infections sinusiennes et bronchiques, <i>Pseudomonas</i></td><td><i>Situs inversus</i> dans 50 % ; pas de stéatorrhée</td></tr>
+            <tr><td>Syndrome de Shwachman-Diamond</td><td><span class="mono">SBDS, EFL1, DNAJC21, SRP54</span></td><td>Insuffisance pancréatique, malabsorption</td><td>Cytopénies, risque de SMD/LAM, anomalies squelettiques</td></tr>
+            <tr><td>Pseudohypoaldostéronisme de type 1</td><td><span class="mono">SCNN1A/B/G, NR3C2</span></td><td>Chlorure sudoral parfois élevé, atteinte bronchique</td><td>Fonction pancréatique exocrine normale</td></tr>
+            <tr><td>Hyperchlorhydrose isolée</td><td><span class="mono">CA12</span></td><td>Chlorure sudoral élevé, retard de croissance</td><td>Déshydratation hyponatrémique sévère avec hyperkaliémie du nourrisson</td></tr>
+            <tr><td>Déficits immunitaires (DICV, agammaglobulinémie liée à l'X)</td><td><span class="mono">BTK</span>, nombreux gènes DICV</td><td>Infections sinopulmonaires, bronchectasies</td><td>Infections extra-respiratoires (méningite, sepsis), profil immunitaire</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="meta">D'après GeneReviews, tableau 3.<sup class="r"><a href="#r1">[1]</a></sup></p>
+    </section>
+
+    <!-- ============ SUEUR ============ -->
+    <section id="sueur">
+      <div class="eyebrow">Examen de référence</div>
+      <h2>Le test de la sueur</h2>
+      <div class="prose">
+        <p>Le dosage du chlorure sudoral après iontophorèse à la pilocarpine reste l'examen de référence du diagnostic.<sup class="r"><a href="#r5">[5]</a></sup> Le consensus de la Cystic Fibrosis Foundation recommande d'établir tout diagnostic lié à <i>CFTR</i>, du nouveau-né à l'adulte, par une évaluation de la fonction CFTR au moyen de ce test.<sup class="r"><a href="#r2">[2]</a></sup></p>
+      </div>
+
+      <div class="sweat">
+        <div class="sweat-head">
+          <div>
+            <label for="cl-input">Chlorure sudoral mesuré</label>
+            <input id="cl-input" type="number" inputmode="decimal" min="0" max="160" step="1" value="72"><span class="unit">mmol/L</span>
+          </div>
+          <span class="ex">Valeur d'exemple : saisissez un résultat pour voir son interprétation.</span>
+        </div>
+        <div class="gauge" aria-hidden="true">
+          <div class="track">
+            <span class="z z-ok" style="width:25%"></span><span class="z z-mid" style="width:25%"></span><span class="z z-high" style="width:50%"></span>
+            <span class="marker" id="cl-marker" style="left:60%"><b id="cl-bubble">72</b><i></i></span>
+          </div>
+          <div class="ticks"><span style="left:0">0</span><span style="left:25%">30</span><span style="left:50%">60</span><span style="left:75%">90</span><span style="left:100%">120</span></div>
+        </div>
+        <div class="zones">
+          <div><b style="color:var(--ok)">&lt; 30</b><span>Mucoviscidose peu probable, à tout âge</span></div>
+          <div><b style="color:var(--mid)">30 – 59</b><span>Intermédiaire</span></div>
+          <div><b style="color:var(--high)">≥ 60</b><span>Compatible avec le diagnostic</span></div>
+        </div>
+        <div class="verdict" id="cl-verdict" aria-live="polite"></div>
+        <p class="meta">Seuils du consensus CFF 2017, repris par GeneReviews.<sup class="r"><a href="#r2">[2]</a><a href="#r1">[1]</a><a href="#r5">[5]</a></sup></p>
+      </div>
+
+      <h3>Réalisation</h3>
+      <div class="prose">
+        <ul>
+          <li>Stimulation de la sudation par iontophorèse de pilocarpine, puis recueil sur compresse ou papier filtre (au moins 75 mg) ou dans un collecteur Macroduct (au moins 15 µL), en 30 minutes au plus.<sup class="r"><a href="#r5">[5]</a><a href="#r8">[8]</a></sup></li>
+          <li>Débit sudoral minimal de 1 g/m²/min ; un recueil insuffisant n'est pas interprétable.<sup class="r"><a href="#r8">[8]</a><a href="#r9">[9]</a></sup></li>
+          <li>Dosage du chlorure (par exemple par coulométrie).<sup class="r"><a href="#r9">[9]</a></sup></li>
+          <li>Nouveau-né dépisté positif : poids &gt; 2 kg, âge gestationnel corrigé ≥ 36 SA, test dès que possible après 10 jours de vie, idéalement avant 4 semaines ; recueil bilatéral recommandé par la CFF.<sup class="r"><a href="#r5">[5]</a><a href="#r8">[8]</a></sup></li>
+          <li>Non acceptables pour le diagnostic : conductivité, osmolalité, sodium ou potassium sudoral, patchs cutanés, électrode posée directement sur la peau.<sup class="r"><a href="#r5">[5]</a></sup> La conductivité peut servir de dépistage ; une valeur &gt; 50 mmol/L impose un dosage du chlorure.<sup class="r"><a href="#r7">[7]</a></sup></li>
+        </ul>
+      </div>
+
+      <h3>Ce que le résultat signifie</h3>
+      <div class="prose">
+        <p>Le chlorure sudoral est une mesure <i>in vivo</i> de la fonction CFTR dans le canal sudoral, où la protéine assure la réabsorption du chlorure.<sup class="r"><a href="#r1">[1]</a><a href="#r19">[19]</a></sup> Il établit la dysfonction CFTR ; il ne mesure ni la sévérité pulmonaire ni le statut pancréatique d'un patient donné. Sous modulateur CFTR, le chlorure sudoral baisse : un résultat obtenu sous traitement doit être lu en connaissance de celui-ci.<sup class="r"><a href="#r32">[32]</a></sup></p>
+        <p>Une valeur ≥ 60 mmol/L est compatible avec le diagnostic, mais d'autres situations peuvent élever le chlorure sudoral.<sup class="r"><a href="#r5">[5]</a></sup> Les résultats limites ou positifs doivent être contrôlés.<sup class="r"><a href="#r10">[10]</a></sup></p>
+      </div>
+
+      <div class="organs">
+        <div class="organ">
+          <h3>Faux positifs décrits</h3>
+          <p>Insuffisance surrénale non traitée, hypothyroïdie non traitée, hypopituitarisme, diabète insipide néphrogénique, dénutrition sévère, dysplasie ectodermique, glycogénose de type I, fucosidose, mucopolysaccharidoses.<sup class="r"><a href="#r10">[10]</a><a href="#r11">[11]</a></sup> Causes génétiques : hyperchlorhydrose (<span class="mono">CA12</span>), pseudohypoaldostéronisme de type 1.<sup class="r"><a href="#r1">[1]</a></sup></p>
+          <p class="meta">Liste issue de sources de laboratoire et secondaires ; plusieurs causes reposent sur des observations isolées.</p>
+        </div>
+        <div class="organ">
+          <h3>Faux négatifs et pièges</h3>
+          <p>Œdème cutané (hypoprotidémie), traitement minéralocorticoïde, volume de sueur insuffisant.<sup class="r"><a href="#r10">[10]</a></sup> Certains génotypes à fonction résiduelle donnent des valeurs intermédiaires ou normales : consulter les valeurs de chlorure sudoral par génotype dans CFTR2.<sup class="r"><a href="#r14">[14]</a></sup> Modulateur en cours.<sup class="r"><a href="#r32">[32]</a></sup></p>
+        </div>
+      </div>
+
+      <div class="flag">
+        <div class="tag">Point d'incertitude · seuils et pratiques</div>
+        <p style="font-size:.95rem">Les seuils &lt; 30 / 30–59 / ≥ 60 mmol/L sont ceux du consensus CFF 2017, valables à tout âge.<sup class="r"><a href="#r2">[2]</a><a href="#r5">[5]</a></sup> D'autres référentiels et laboratoires gardent une limite de normalité à 40 mmol/L, avec une zone intermédiaire de 40 à 60 mmol/L (guide australasien 2017).<sup class="r"><a href="#r7">[7]</a><a href="#r10">[10]</a></sup> Une enquête de l'ECFS a montré des pratiques européennes hétérogènes, souvent non conformes aux recommandations ; le recueil bilatéral y était rare, contrairement aux recommandations américaines.<sup class="r"><a href="#r6">[6]</a></sup> Vérifier les seuils du laboratoire qui rend le résultat.</p>
+      </div>
+    </section>
+
+    <!-- ============ BILAN ============ -->
+    <section id="bilan" class="wide">
+      <div class="eyebrow">Paraclinique</div>
+      <h2>Bilan à prescrire</h2>
+      <p style="max-width:46rem">Examens du diagnostic, puis du bilan initial et du suivi. Fréquences selon GeneReviews (recommandations nord-américaines) ; à adapter au protocole du centre.</p>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Examen</th><th>Indication et fréquence</th><th>Lecture</th><th>Réf.</th></tr></thead>
+          <tbody>
+            <tr><td><b>Test de la sueur</b></td><td>Première intention devant toute suspicion ; dépistage néonatal positif ; fratrie d'un cas si variants familiaux inconnus</td><td>&lt; 30 / 30–59 / ≥ 60 mmol/L</td><td><sup class="r"><a href="#r1">[1]</a><a href="#r2">[2]</a></sup></td></tr>
+            <tr><td><b>Génotypage <i>CFTR</i></b></td><td>Après sueur positive ou intermédiaire ; fratrie si variants familiaux connus ; avant modulateur</td><td>Voir la section génétique</td><td><sup class="r"><a href="#r1">[1]</a><a href="#r2">[2]</a></sup></td></tr>
+            <tr><td><b>Différence de potentiel nasal, courant intestinal (ICM)</b></td><td>Cas non conclusifs après sueur et génétique ; centres spécialisés</td><td>Profil compatible ou non avec une dysfonction CFTR</td><td><sup class="r"><a href="#r1">[1]</a><a href="#r3">[3]</a></sup></td></tr>
+            <tr><td><b>Élastase fécale</b></td><td>Au diagnostic, puis si les symptômes changent ; dosable sous extraits pancréatiques</td><td>&gt; 200 µg/g normal ; 100–200 modérée ; &lt; 100 insuffisance sévère</td><td><sup class="r"><a href="#r1">[1]</a><a href="#r25">[25]</a></sup></td></tr>
+            <tr><td><b>Examen cytobactériologique des crachats ou écouvillon oropharyngé profond</b></td><td>Au diagnostic, puis au moins tous les 3 mois</td><td>Germes de la mucoviscidose, dont <i>P. aeruginosa</i></td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>Culture mycobactéries non tuberculeuses ; IgE totales</b></td><td>Annuel, et si aggravation respiratoire</td><td>MNT ; dépistage de l'ABPA</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>EFR (spirométrie)</b></td><td>Fréquentes après 5 ans</td><td>VEMS, évolution</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>Radiographie ou scanner thoracique</b></td><td>Tous les 2 ans ou selon la clinique</td><td>Bronchectasies</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>Vitamines A, D, E ; TP (marqueur de la vitamine K)</b></td><td>Annuel</td><td>Carences liposolubles</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>Bilan hépatique (ASAT, ALAT, PAL, GGT, bilirubine, albumine)</b></td><td>Annuel ; échographie Doppler (± élastographie) si anomalies &gt; 6 mois</td><td>Atteinte hépatobiliaire</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>HGPO 2 h</b></td><td>Annuelle à partir de 10 ans ; glycémie aléatoire annuelle</td><td>CFRD. HbA1c et fructosamine non indiquées</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>Ionogramme, urée, créatinine</b></td><td>Au diagnostic, puis annuel</td><td>Perte de sel, déshydratation</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>NFS</b></td><td>Annuelle</td><td>Contexte infectieux</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>Ostéodensitométrie (DXA)</b></td><td>Adolescence si facteurs de risque</td><td>Ostéopénie, ostéoporose</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>Échographie des déférents, avis urologique</b></td><td>Homme, selon le projet parental</td><td>Agénésie des canaux déférents</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>PHQ-9, GAD-7</b></td><td>Annuel</td><td>Dépression, anxiété</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============ ALGO ============ -->
+    <section id="algo">
+      <div class="eyebrow">Démarche</div>
+      <h2>Démarche diagnostique</h2>
+      <div class="flow" role="list">
+        <div class="fbox" role="listitem"><span class="k">Porte d'entrée</span>Dépistage néonatal positif (TIR élevée) · signes évocateurs · apparenté du 1er degré atteint</div>
+        <div class="down" aria-hidden="true"></div>
+        <div class="fbox key" role="listitem"><span class="k">Étape 1</span><b>Test de la sueur</b> (chlorure, iontophorèse à la pilocarpine)</div>
+        <div class="down" aria-hidden="true"></div>
+        <div class="branches">
+          <div class="branch b-high" role="listitem">
+            <div class="fbox"><span class="cut">≥ 60 mmol/L</span>Diagnostic de mucoviscidose (avec contexte évocateur)</div>
+            <div class="down" aria-hidden="true"></div>
+            <div class="fbox">Génotypage <i>CFTR</i> complet : conseil génétique, dépistage familial, éligibilité aux modulateurs</div>
+          </div>
+          <div class="branch b-mid" role="listitem">
+            <div class="fbox"><span class="cut">30 – 59 mmol/L</span>Analyse étendue de <i>CFTR</i> (séquençage + délétions/duplications)</div>
+            <div class="down" aria-hidden="true"></div>
+            <div class="fbox">2 variants CF-causing en trans : mucoviscidose. Sinon : DDP nasale ou ICM en centre spécialisé</div>
+            <div class="down" aria-hidden="true"></div>
+            <div class="fbox">Mucoviscidose, CFTR-RD, ou CRMS/CFSPID chez le nourrisson dépisté asymptomatique</div>
+          </div>
+          <div class="branch b-ok" role="listitem">
+            <div class="fbox"><span class="cut">&lt; 30 mmol/L</span>Mucoviscidose peu probable</div>
+            <div class="down" aria-hidden="true"></div>
+            <div class="fbox">Atteinte d'organe isolée (ABCD, pancréatite récidivante, bronchectasies) : discuter un trouble lié à <i>CFTR</i> et l'étude génétique</div>
+          </div>
+        </div>
+      </div>
+      <p class="meta">D'après les consensus CFF 2017 et GeneReviews.<sup class="r"><a href="#r1">[1]</a><a href="#r2">[2]</a><a href="#r3">[3]</a></sup></p>
+
+      <div class="note">
+        <h3>Définitions utiles</h3>
+        <div class="prose" style="font-size:.95rem">
+          <p><b>CRMS/CFSPID</b> (termes américain et européen, désormais fusionnés) : nourrisson asymptomatique à TIR élevée avec soit un chlorure &lt; 30 mmol/L et deux variants dont au moins un de signification inconnue, soit un chlorure de 30 à 59 mmol/L avec zéro ou un seul variant CF-causing.<sup class="r"><a href="#r1">[1]</a><a href="#r2">[2]</a></sup> Suivi spécialisé nécessaire : certains enfants deviennent symptomatiques ou voient leur chlorure sudoral monter.<sup class="r"><a href="#r1">[1]</a></sup></p>
+          <p><b>Troubles liés à <i>CFTR</i> (CFTR-RD)</b> : variants bialléliques sans tableau complet de mucoviscidose. Le plus fréquent est l'ABCD isolée, habituellement un variant sévère en trans d'un variant non CF-causing comme <span class="mono">c.1210-12T[5]</span> (5T) ; aussi pancréatite liée à <i>CFTR</i> et bronchectasies disséminées.<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+      </div>
+
+      <div class="flag">
+        <div class="tag">Point d'incertitude · deux variants suffisent-ils ?</div>
+        <p style="font-size:.95rem">GeneReviews et CFTR2 admettent que deux variants CF-causing en trans établissent le diagnostic dans un contexte évocateur.<sup class="r"><a href="#r1">[1]</a><a href="#r4">[4]</a></sup> Le consensus sur les populations dépistées recommande néanmoins de documenter la dysfonction CFTR par un test de la sueur, même chez un nouveau-né porteur de deux variants CF-causing.<sup class="r"><a href="#r3">[3]</a></sup> En pratique, les deux examens sont complémentaires.</p>
+      </div>
+    </section>
+
+    <!-- ============ GENETIQUE ============ -->
+    <section id="genetique">
+      <div class="eyebrow">Biologie moléculaire</div>
+      <h2>Diagnostic génétique</h2>
+
+      <h3>Stratégie</h3>
+      <div class="prose">
+        <ul>
+          <li><b>Séquençage de <i>CFTR</i></b> en première intention : il détecte 97 à 98 % des variants pathogènes (faux-sens, non-sens, épissage, petites insertions/délétions).<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li><b>Recherche de délétions/duplications</b> (MLPA, qPCR, PCR longue, puce ciblée) si un seul ou aucun variant : 2 à 3 % des variants.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li><b>Panels ciblés</b> à réserver aux populations à variants fondateurs connus ; pour les ascendances autres que nord-européennes, une analyse complète est préférable.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li><b>Variants introniques profonds</b> (dont <span class="mono">c.3718-2477C&gt;T</span>) : non couverts par l'exome ; prévoir une analyse dédiée si la méthode ne les couvre pas.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li><b>Tractus poly-T / TG de l'intron 8</b> (<span class="mono">c.1210-12T[n]</span>) : le 5T intervient dans l'ABCD isolée ; il figure dans le panel ACMG de dépistage.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li><b>Lecture longue</b> : le séquençage nanopore du gène entier permet de détecter et de phaser les variants en une analyse ; démontré sur une petite série marocaine.<sup class="r"><a href="#r36">[36]</a></sup></li>
+        </ul>
+      </div>
+
+      <h3>Pièges d'interprétation</h3>
+      <div class="prose">
+        <ul>
+          <li><b>Phase</b> : tester les deux parents pour confirmer la position en trans et calculer le risque de récurrence.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li><b>Homozygotie apparente</b> : penser à une délétion d'un ou plusieurs exons sur l'autre allèle, ou à une isodisomie uniparentale.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li><b>Variant présent chez un seul parent</b> (filiation confirmée) : événement <i>de novo</i> chez le cas index ou mosaïcisme parental.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li><b>Allèles complexes</b> : plusieurs variants en cis peuvent modifier fortement la fonction. Exemple : allèle <span class="mono">p.[R74W;R1070W;D1270N]</span> en trans d'un variant de classe I chez un nourrisson marocain atteint.<sup class="r"><a href="#r37">[37]</a></sup></li>
+          <li><b>VUS</b> : n'établit ni n'exclut le diagnostic ; recourir aux tests fonctionnels.<sup class="r"><a href="#r1">[1]</a><a href="#r4">[4]</a></sup></li>
+        </ul>
+      </div>
+
+      <div class="note">
+        <h3>Contexte marocain et maghrébin</h3>
+        <div class="prose" style="font-size:.95rem">
+          <p>Sur 150 Marocains en bonne santé testés pour les variants fréquents et le polymorphisme poly-T : 2 hétérozygotes F508del et 8 porteurs du (T)5.<sup class="r"><a href="#r34">[34]</a></sup> Le même groupe estime la prévalence de la maladie entre 1/1 680 et 1/4 150 dans la population marocaine.<sup class="r"><a href="#r35">[35]</a></sup></p>
+          <p>Une étude de 2026 associant le service de génétique médicale et d'oncogénétique du CHU Hassan II de Fès a séquencé le gène entier chez 9 personnes (6 cas index, 3 parents). Variants identifiés : <span class="mono">p.Leu227Arg, p.Phe508del, p.Arg1162*, p.Ser364Pro, p.Phe1078Ser, p.Leu997Phe</span>. <span class="mono">p.Ser364Pro</span> et <span class="mono">p.Phe1078Ser</span>, non caractérisés auparavant, ont une expression réduite en cellules HEK293, et <span class="mono">p.Phe1078Ser</span> répond aux modulateurs <i>in vitro</i>.<sup class="r"><a href="#r36">[36]</a></sup> La liste n'implique pas que chaque variant soit CF-causing : vérifier son statut dans CFTR2 et ClinVar.</p>
+          <p>F508del représente environ 70 % des allèles en Europe du Nord et en Amérique du Nord<sup class="r"><a href="#r13">[13]</a></sup> ; sa part est plus faible au Maghreb (de l'ordre de 18 % en Tunisie selon une source secondaire).<sup class="r"><a href="#r39">[39]</a></sup></p>
+          <p class="meta">Données limitées : petits effectifs, larges intervalles. Aucune information vérifiée ici sur un dépistage néonatal systématique au Maroc.</p>
+        </div>
+      </div>
+
+      <h3>Conseil génétique</h3>
+      <div class="prose">
+        <ul>
+          <li>Transmission autosomique récessive : pour un couple de deux hétérozygotes, 25 % d'enfants atteints, 50 % d'hétérozygotes, 25 % non porteurs à chaque grossesse.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li>Chaque frère ou sœur des parents d'un cas index a 50 % de risque d'être porteur.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li>Un patient atteint transmet un variant à tous ses enfants ; proposer le test au conjoint.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li>Hétérozygotes : risque accru de bronchectasies, ABPA, asthme, rhinosinusite chronique et polypose, mycobactéries atypiques, kératodermie aquagénique ; environ 15 % des pancréatites aiguës récidivantes ou chroniques d'une série portaient un variant <i>CFTR</i>.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li>Diagnostic prénatal et préimplantatoire possibles une fois les variants familiaux identifiés.<sup class="r"><a href="#r1">[1]</a></sup></li>
+          <li>Dépistage des porteurs : l'ACMG a remplacé en 2023 sa liste minimale de 23 variants par une liste de 100 variants ; recommandation limitée au dépistage des porteurs, pas au diagnostic.<sup class="r"><a href="#r38">[38]</a></sup></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ TRAITEMENT ============ -->
+    <section id="traitement" class="wide">
+      <div class="eyebrow">Prise en charge</div>
+      <h2>Traitement</h2>
+      <p style="max-width:46rem">Aucun traitement ne guérit la mucoviscidose. Les modulateurs CFTR corrigent en partie la dysfonction de la protéine chez les patients porteurs de variants répondeurs ; le traitement symptomatique multidisciplinaire reste indispensable.<sup class="r"><a href="#r1">[1]</a></sup></p>
+
+      <h3>Modulateurs CFTR</h3>
+      <div class="tw">
+        <table>
+          <thead><tr><th>Molécules</th><th>Mécanisme</th><th>Indication</th><th>Réf.</th></tr></thead>
+          <tbody>
+            <tr><td><b>Ivacaftor</b></td><td>Potentiateur</td><td>≥ 4 mois, au moins un variant répondeur (variants de gating notamment)</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>Lumacaftor / ivacaftor</b></td><td>Correcteur + potentiateur</td><td>≥ 1 an, F508del homozygote</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>Tézacaftor / ivacaftor</b></td><td>Correcteur + potentiateur</td><td>≥ 6 ans, F508del homozygote</td><td><sup class="r"><a href="#r1">[1]</a></sup></td></tr>
+            <tr><td><b>Élexacaftor / tézacaftor / ivacaftor</b><br><span class="meta">Trikafta, Kaftrio</span></td><td>Deux correcteurs + potentiateur</td><td><b>FDA</b> : ≥ 2 ans, tout variant répondeur (données cliniques ou <i>in vitro</i>) ou produisant une protéine CFTR (avril 2026). <b>UE</b> : ≥ 2 ans, au moins un variant non de classe I (avril 2025). Avertissement encadré pour atteinte hépatique (FDA, décembre 2024).</td><td><sup class="r"><a href="#r30">[30]</a><a href="#r27">[27]</a><a href="#r28">[28]</a></sup></td></tr>
+            <tr><td><b>Vanzacaftor / tézacaftor / deutivacaftor</b><br><span class="meta">Alyftrek</span></td><td>Deux correcteurs + potentiateur (deutivacaftor)</td><td><b>FDA</b> : approuvé en décembre 2024 à partir de 6 ans ; étendu en avril 2026 à tout variant répondeur ou produisant une protéine. <b>UE</b> : ≥ 6 ans, au moins un variant non de classe I (2025). Avertissement encadré hépatique. 2–5 ans : données de phase 3 présentées en juin 2026, soumissions annoncées.</td><td><sup class="r"><a href="#r29">[29]</a><a href="#r30">[30]</a><a href="#r31">[31]</a><a href="#r32">[32]</a></sup></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prose" style="max-width:46rem">
+        <p>Après les extensions d'avril 2026, environ 95 % des patients américains sont éligibles à un modulateur.<sup class="r"><a href="#r30">[30]</a></sup> La présence d'un variant éligible ne doit pas être le seul critère de décision, et la liste des variants répondeurs n'est pas exhaustive.<sup class="r"><a href="#r33">[33]</a></sup> Les génotypes sans protéine (variants de classe I ou VII sur les deux allèles) restent hors indication ; GeneReviews estimait en 2024 cette population à environ 10 %, cible des agents de translecture, des thérapies ARN, de la thérapie génique et de l'édition du génome, encore en recherche.<sup class="r"><a href="#r1">[1]</a></sup></p>
+        <p class="meta">Indications et âges évoluent rapidement et diffèrent selon les agences. Disponibilité et remboursement au Maroc non vérifiés ici.</p>
+      </div>
+
+      <h3>Traitement symptomatique</h3>
+      <div class="organs">
+        <div class="organ">
+          <h3>Respiratoire</h3>
+          <p>Kinésithérapie de désencombrement. Ordre recommandé des inhalations : bronchodilatateur, sérum salé hypertonique, dornase alfa, désencombrement, corticoïde inhalé et/ou β2 de longue durée chez certains patients, puis antibiotique inhalé.<sup class="r"><a href="#r1">[1]</a></sup> Recommandations CFF des traitements chroniques.<sup class="r"><a href="#r26">[26]</a></sup> Pneumothorax et hémoptysie : prise en charge standard ; transplantation bipulmonaire en cas d'atteinte évoluée.<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+        <div class="organ">
+          <h3>Infections</h3>
+          <p>Antibiothérapie orale, inhalée ou IV pour la suppression chronique et les exacerbations ; tentative d'éradication de <i>P. aeruginosa</i> recommandée. Vaccinations, dont la grippe annuelle. Précautions contact à chaque consultation, la transmission croisée entre patients étant documentée.<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+        <div class="organ">
+          <h3>Nutrition et digestif</h3>
+          <p>Extraits pancréatiques, alimentation hypercalorique, vitamines A, D, E, K, zinc à discuter, gastrostomie si besoin. Laxatifs pour le syndrome d'obstruction intestinale distale, chirurgie en cas d'occlusion. Acide ursodésoxycholique si élévation persistante du bilan hépatique.<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+        <div class="organ">
+          <h3>Sel et hydratation</h3>
+          <p>Supplémentation sodée, eau et sel supplémentaires lors de chaleur, d'humidité ou d'effort physique.<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+        <div class="organ">
+          <h3>Endocrinien et osseux</h3>
+          <p>CFRD : suivi par un endocrinologue, insuline.<sup class="r"><a href="#r1">[1]</a></sup> Ostéopénie : surveillance DXA selon les facteurs de risque.<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+        <div class="organ">
+          <h3>Fertilité, grossesse, psychique</h3>
+          <p>Homme : prélèvement chirurgical de spermatozoïdes (MESA ou TESE) puis FIV-ICSI. Grossesse généralement bien tolérée ; modulateurs pendant la grossesse : pas de signal dans les modèles animaux <span class="ev ev-a">Animal</span>, données humaines limitées à des cas et enquêtes <span class="ev ev-h">Humain</span>. Dépistage annuel de l'anxiété et de la dépression.<sup class="r"><a href="#r1">[1]</a></sup></p>
+        </div>
+      </div>
+      <p class="meta" style="max-width:46rem">À éviter : tabagisme passif, exposition aux infections respiratoires, déshydratation.<sup class="r"><a href="#r1">[1]</a></sup> Pronostic : survie médiane prédite de 53 ans pour les patients nés entre 2017 et 2021 (registre américain), non transposable directement à d'autres systèmes de soins.<sup class="r"><a href="#r1">[1]</a></sup></p>
+    </section>
+
+    <!-- ============ INCERTITUDES ============ -->
+    <section id="incertitudes">
+      <div class="eyebrow">Synthèse critique</div>
+      <h2>Points d'incertitude</h2>
+      <ol class="unc">
+        <li><b>Mécanisme pulmonaire initial</b> : hyperabsorption de Na⁺ (souris) contre défaut de bicarbonate et acidification (porc) ; pH du liquide de surface normal chez l'enfant, conclusion contestée.<sup class="r"><a href="#r20">[20]</a><a href="#r21">[21]</a><a href="#r22">[22]</a><a href="#r23">[23]</a><a href="#r24">[24]</a></sup></li>
+        <li><b>Seuils du test de la sueur</b> : consensus CFF 2017 à tout âge, mais d'autres référentiels et laboratoires gardent une zone de 40 à 60 mmol/L.<sup class="r"><a href="#r2">[2]</a><a href="#r7">[7]</a><a href="#r6">[6]</a></sup></li>
+        <li><b>Génotype seul</b> : suffisant selon GeneReviews et CFTR2, confirmation par la sueur recommandée chez le dépisté.<sup class="r"><a href="#r1">[1]</a><a href="#r3">[3]</a><a href="#r4">[4]</a></sup></li>
+        <li><b>Faux positifs du test de la sueur</b> : liste surtout issue de sources de laboratoire et d'observations isolées.<sup class="r"><a href="#r10">[10]</a><a href="#r11">[11]</a></sup></li>
+        <li><b>Épidémiologie marocaine</b> : un échantillon de 150 personnes et de petites séries de patients ; spectre mutationnel incomplètement connu.<sup class="r"><a href="#r34">[34]</a><a href="#r36">[36]</a></sup></li>
+        <li><b>Modulateurs</b> : indications différentes FDA/UE et en évolution rapide ; données pédiatriques 2–5 ans pour le vanzacaftor en cours d'évaluation réglementaire.<sup class="r"><a href="#r27">[27]</a><a href="#r30">[30]</a><a href="#r32">[32]</a></sup></li>
+        <li><b>Chiffres CFTR2</b> : comptes de 2024 ; la base a été mise à jour en janvier 2026.<sup class="r"><a href="#r14">[14]</a><a href="#r15">[15]</a></sup></li>
+        <li><b>Pronostic</b> : données de registre américain, non transposables telles quelles.<sup class="r"><a href="#r1">[1]</a></sup></li>
+      </ol>
+    </section>
+
+    <!-- ============ REFERENCES ============ -->
+    <section id="refs" class="wide">
+      <div class="eyebrow">Sources</div>
+      <h2>Références</h2>
+      <ol class="refs">
+        <li id="r1">Savant A, Lyman B, Bojanowski C, Upadia J. Cystic Fibrosis. GeneReviews®, révision du 8 août 2024. <a href="https://www.ncbi.nlm.nih.gov/books/NBK1250/" target="_blank" rel="noopener">ncbi.nlm.nih.gov/books/NBK1250</a></li>
+        <li id="r2">Farrell PM et al. Diagnosis of Cystic Fibrosis: Consensus Guidelines from the Cystic Fibrosis Foundation. J Pediatr 2017;181S:S4-S15. <a href="https://doi.org/10.1016/j.jpeds.2016.09.064" target="_blank" rel="noopener">doi:10.1016/j.jpeds.2016.09.064</a></li>
+        <li id="r3">Farrell PM et al. Diagnosis of Cystic Fibrosis in Screened Populations. J Pediatr 2017;181S:S33-S44. <a href="https://doi.org/10.1016/j.jpeds.2016.09.065" target="_blank" rel="noopener">doi:10.1016/j.jpeds.2016.09.065</a></li>
+        <li id="r4">Sosnay PR et al. Applying CFTR Genetics and CFTR2 Data to Facilitate Diagnoses. J Pediatr 2017;181S:S27-S32. <a href="https://doi.org/10.1016/j.jpeds.2016.09.063" target="_blank" rel="noopener">doi:10.1016/j.jpeds.2016.09.063</a></li>
+        <li id="r5">Cystic Fibrosis Foundation. Sweat Test Clinical Care Guidelines. <a href="https://www.cff.org/medical-professionals/sweat-test-clinical-care-guidelines" target="_blank" rel="noopener">cff.org</a></li>
+        <li id="r6">Cirilli N et al. Real life practice of sweat testing in Europe. J Cyst Fibros 2018. <a href="https://doi.org/10.1016/j.jcf.2017.09.002" target="_blank" rel="noopener">doi:10.1016/j.jcf.2017.09.002</a></li>
+        <li id="r7">AACB. Australasian Guideline for the Performance of the Sweat Test, 2017. <a href="https://aacblm.imiscloud.com/common/Uploaded%20files/aacb/guidelines%20and%20position%20statements/guidelines/aacb%20-endorsed%20guidelines/20171201%20GPS%20Australasian%20Guidelines%20for%20Sweat%20Testing%202017.pdf" target="_blank" rel="noopener">aacblm.imiscloud.com</a></li>
+        <li id="r8">UChicago Medicine Laboratories. Chloride, Sweat (SWCL). <a href="https://uchicagomedlabs.testcatalog.org/show/SWCL-1" target="_blank" rel="noopener">uchicagomedlabs.testcatalog.org</a></li>
+        <li id="r9">MU Health Care Laboratory. Sweat Chloride Collection and Analysis. <a href="https://muhealth.testcatalog.org/show/Swt-Cl" target="_blank" rel="noopener">muhealth.testcatalog.org</a></li>
+        <li id="r10">Exeter Clinical Laboratory. Chloride (Sweat). <a href="https://exeterlaboratory.com/?p=1456" target="_blank" rel="noopener">exeterlaboratory.com</a></li>
+        <li id="r11">GPnotebook. Sweat test: false positives. <a href="https://gpnotebook.com/pages/nutrition/sweat-test/false-positives" target="_blank" rel="noopener">gpnotebook.com</a></li>
+        <li id="r12">NCBI Gene. CFTR, Gene ID 1080 (mise à jour juillet 2026). <a href="https://www.ncbi.nlm.nih.gov/gene/1080" target="_blank" rel="noopener">ncbi.nlm.nih.gov/gene/1080</a></li>
+        <li id="r13">The cystic fibrosis gene. Br Med Bull 1992;48:738-753. <a href="https://doi.org/10.1093/oxfordjournals.bmb.a072575" target="_blank" rel="noopener">doi:10.1093/oxfordjournals.bmb.a072575</a></li>
+        <li id="r14">CFTR2, The Clinical and Functional TRanslation of CFTR. Mise à jour du 30 janvier 2026. <a href="https://cftr2.org" target="_blank" rel="noopener">cftr2.org</a></li>
+        <li id="r15">Reclassification of CRMS/CFSPID cases with 2024 CFTR2 variant annotations. Int J Neonatal Screen 2025;11(3):60. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12372008/" target="_blank" rel="noopener">PMC12372008</a></li>
+        <li id="r16">De Boeck K, Amaral MD. Progress in therapies for cystic fibrosis. Lancet Respir Med 2016;4(8):662-674.</li>
+        <li id="r17">Classes of mutations in the CFTR gene (tableau 1). Diagnostics 2020;10(12):1102. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7765910/" target="_blank" rel="noopener">PMC7765910</a></li>
+        <li id="r18">The seven classes of CFTR defects, with examples (tableau 1). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7170930/" target="_blank" rel="noopener">PMC7170930</a></li>
+        <li id="r19">Quinton PM. Chloride impermeability in cystic fibrosis. Nature 1983;301:421-422. <a href="https://doi.org/10.1038/301421a0" target="_blank" rel="noopener">doi:10.1038/301421a0</a></li>
+        <li id="r20">Mall M et al. Increased airway epithelial Na⁺ absorption produces cystic fibrosis-like lung disease in mice. Nat Med 2004;10:487-493. <a href="https://doi.org/10.1038/nm1028" target="_blank" rel="noopener">doi:10.1038/nm1028</a></li>
+        <li id="r21">Chen JH et al. Loss of anion transport without increased sodium absorption characterizes newborn porcine cystic fibrosis airway epithelia. Cell 2010;143:911-923. <a href="https://doi.org/10.1016/j.cell.2010.11.029" target="_blank" rel="noopener">doi:10.1016/j.cell.2010.11.029</a></li>
+        <li id="r22">Pezzulo AA et al. Reduced airway surface pH impairs bacterial killing in the porcine cystic fibrosis lung. Nature 2012;487:109-113. <a href="https://doi.org/10.1038/nature11130" target="_blank" rel="noopener">doi:10.1038/nature11130</a></li>
+        <li id="r23">Schultz A et al. Airway surface liquid pH is not acidic in children with cystic fibrosis. Nat Commun 2017;8. <a href="https://doi.org/10.1038/s41467-017-00532-5" target="_blank" rel="noopener">doi:10.1038/s41467-017-00532-5</a></li>
+        <li id="r24">Débat sur le pH du liquide de surface, J Physiol 2018 : <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6092276/" target="_blank" rel="noopener">PMC6092276</a> et réplique <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6092306/" target="_blank" rel="noopener">PMC6092306</a></li>
+        <li id="r25">Mayo Clinic Laboratories. Pancreatic Elastase, Feces. <a href="https://www.mayocliniclabs.com/test-catalog/overview/609492" target="_blank" rel="noopener">mayocliniclabs.com</a></li>
+        <li id="r26">Mogayzel PJ et al. Cystic fibrosis pulmonary guidelines. Chronic medications for maintenance of lung health. Am J Respir Crit Care Med 2013;187:680-689. <a href="https://doi.org/10.1164/rccm.201207-1160oe" target="_blank" rel="noopener">doi:10.1164/rccm.201207-1160oe</a></li>
+        <li id="r27">Vertex. European Commission approves expanded label for Kaftrio, 7 avril 2025 ; avis CHMP du 27 février 2025. <a href="https://news.vrtx.com/node/33631" target="_blank" rel="noopener">news.vrtx.com</a> · <a href="https://www.ema.europa.eu/en/medicines/human/variation/kaftrio-0" target="_blank" rel="noopener">ema.europa.eu</a></li>
+        <li id="r28">Vertex. FDA approval for Trikafta to include additional non-F508del responsive variants (94 variants ajoutés ; avertissement hépatique encadré), décembre 2024. <a href="https://www.businesswire.com/news/home/20241220045992/en" target="_blank" rel="noopener">businesswire.com</a></li>
+        <li id="r29">FDA approves Vertex's Alyftrek, décembre 2024. Precision Medicine Online. <a href="https://www.precisionmedicineonline.com/node/37306" target="_blank" rel="noopener">precisionmedicineonline.com</a></li>
+        <li id="r30">FDA expands CFTR modulator labels, covering ~95% of US cystic fibrosis patients, 1er avril 2026. HCPLive ; Epocrates. <a href="https://www.hcplive.com/view/fda-expands-cftr-modulator-labels-covering-95-of-us-cystic-fibrosis-patients" target="_blank" rel="noopener">hcplive.com</a> · <a href="https://www.epocrates.com/online/article/fda-expands-cf-indications-for-alyftrek-and-trikafta" target="_blank" rel="noopener">epocrates.com</a></li>
+        <li id="r31">Vertex gets EU nod for Alyftrek, 2025 (source secondaire, Zacks via Finviz). <a href="https://finviz.com/news/94179/vertex-gets-eu-nod-for-new-cystic-fibrosis-drug-alyftrek" target="_blank" rel="noopener">finviz.com</a></li>
+        <li id="r32">Alyftrek phase 3 data support pediatric CFTR modulator submissions, 8 juin 2026. Contemporary Pediatrics. <a href="https://www.contemporarypediatrics.com/view/alyftrek-phase-3-data-support-pediatric-cftr-modulator-submissions" target="_blank" rel="noopener">contemporarypediatrics.com</a></li>
+        <li id="r33">Trikafta, notice de prescription (section 12, tableau 6). <a href="https://medlibrary.org/lib/rx/meds/trikafta-1/page/6/" target="_blank" rel="noopener">medlibrary.org</a></li>
+        <li id="r34">Ratbi I et al. Cystic fibrosis carrier frequency and estimated prevalence of the disease in Morocco. J Cyst Fibros 2008;7:440-443. <a href="https://doi.org/10.1016/j.jcf.2007.12.006" target="_blank" rel="noopener">doi:10.1016/j.jcf.2007.12.006</a></li>
+        <li id="r35">La mucoviscidose au Maroc, mais où sont passés les malades ? HAL hal-00634746. <a href="https://hal-confremo.archives-ouvertes.fr/hal-00634746" target="_blank" rel="noopener">hal-confremo.archives-ouvertes.fr</a></li>
+        <li id="r36">El Makhzen N et al. CFTR gene variant detection in Moroccan individuals via nanopore long-read sequencing. Front Genet 2026;17:1769093. <a href="https://doi.org/10.3389/fgene.2026.1769093" target="_blank" rel="noopener">doi:10.3389/fgene.2026.1769093</a></li>
+        <li id="r37">de Prada Merino A et al. [R74W;R1070W;D1270N]: a new complex allele responsible for cystic fibrosis. J Cyst Fibros 2010;9:447-449. <a href="https://doi.org/10.1016/j.jcf.2010.08.014" target="_blank" rel="noopener">doi:10.1016/j.jcf.2010.08.014</a></li>
+        <li id="r38">ACMG increases cystic fibrosis CFTR variants from 23 to 100 for carrier screening. Inside Precision Medicine, 2023. <a href="https://insideprecisionmedicine.com/news-and-features/acmg-increases-cystic-fibrosis-cftr-variants-from-23-to-100-for-carrier-screening" target="_blank" rel="noopener">insideprecisionmedicine.com</a></li>
+        <li id="r39">L'ère des traitements ciblés (source secondaire). Le Quotidien du Médecin. <a href="https://diabetologie-endocrinologie.lequotidiendumedecin.fr/specialites/genetique/lere-des-traitements-cibles" target="_blank" rel="noopener">lequotidiendumedecin.fr</a></li>
+        <li id="r40">CFTR-France Database. Schematic representation of the 27 CFTR exons, v1 2015. <a href="https://cftr.iurc.montp.inserm.fr/CFTR/data/img/Schematic-representation-CFTR-exons.pdf" target="_blank" rel="noopener">cftr.iurc.montp.inserm.fr</a></li>
+        <li id="r41">Revue sur les classes de variants CFTR et leur chevauchement. Dove Medical Press. <a href="https://dovepress.com/article/download/48041" target="_blank" rel="noopener">dovepress.com</a></li>
+      </ol>
+      <p class="meta" style="max-width:46rem">À consulter également : Castellani C et al. ECFS best practice guidelines: the 2018 revision. J Cyst Fibros 2018;17:153-178. <a href="https://doi.org/10.1016/j.jcf.2018.02.006" target="_blank" rel="noopener">doi:10.1016/j.jcf.2018.02.006</a></p>
+    </section>
+
+    <footer>Fiche de référence établie le 10 octobre 2026 à partir des sources ci-dessus. Elle ne remplace ni les recommandations locales ni l'avis d'un centre de ressources et de compétences de la mucoviscidose.</footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  function store(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
+  function load(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+
+  // Theme: system -> light -> dark
+  var modes = ['system','light','dark'];
+  var labels = {system:'Système', light:'Clair', dark:'Sombre'};
+  var btnTheme = document.getElementById('btn-theme');
+  function applyTheme(m){
+    if(m === 'system'){ root.removeAttribute('data-theme'); } else { root.setAttribute('data-theme', m); }
+    btnTheme.textContent = labels[m];
+  }
+  var theme = load('mv-theme'); if(modes.indexOf(theme) < 0) theme = 'system';
+  applyTheme(theme);
+  btnTheme.addEventListener('click', function(){
+    theme = modes[(modes.indexOf(theme) + 1) % modes.length];
+    applyTheme(theme); store('mv-theme', theme);
+  });
+
+  // Text size
+  var scale = parseFloat(load('mv-scale')); if(!(scale >= 0.85 && scale <= 1.35)) scale = 1;
+  function applyScale(){ root.style.setProperty('--scale', scale.toFixed(2)); }
+  applyScale();
+  document.getElementById('btn-minus').addEventListener('click', function(){ scale = Math.max(0.85, Math.round((scale - 0.1)*100)/100); applyScale(); store('mv-scale', scale); });
+  document.getElementById('btn-plus').addEventListener('click', function(){ scale = Math.min(1.35, Math.round((scale + 0.1)*100)/100); applyScale(); store('mv-scale', scale); });
+
+  // Sweat chloride interpreter
+  var input = document.getElementById('cl-input');
+  var marker = document.getElementById('cl-marker');
+  var bubble = document.getElementById('cl-bubble');
+  var verdict = document.getElementById('cl-verdict');
+  function interpret(){
+    var v = parseFloat(String(input.value).replace(',', '.'));
+    if(isNaN(v) || v < 0){
+      verdict.innerHTML = 'Saisissez une valeur en mmol/L.';
+      marker.hidden = true; return;
+    }
+    marker.hidden = false;
+    var pct = Math.max(0, Math.min(100, v / 120 * 100));
+    marker.style.left = pct + '%';
+    bubble.textContent = (v > 120 ? '>120' : Math.round(v));
+    var txt;
+    if(v < 30){
+      txt = '<strong>Inférieur à 30 mmol/L : mucoviscidose peu probable, quel que soit l’âge.</strong> Devant une atteinte d’organe isolée (agénésie des déférents, pancréatite récidivante, bronchectasies), discuter un trouble lié à CFTR et l’étude génétique.';
+    } else if(v < 60){
+      txt = '<strong>Zone intermédiaire (30 à 59 mmol/L).</strong> Contrôler le test, faire une analyse étendue de CFTR (séquençage et délétions/duplications), puis différence de potentiel nasal ou mesure du courant intestinal si le résultat reste non conclusif. Chez un nourrisson dépisté asymptomatique : discuter CRMS/CFSPID.';
+    } else {
+      txt = '<strong>Supérieur ou égal à 60 mmol/L : compatible avec une mucoviscidose</strong> dans un contexte évocateur (dépistage positif, signes cliniques, fratrie atteinte). Contrôler le résultat, éliminer une cause de faux positif, puis génotypage CFTR complet pour le conseil génétique et l’éligibilité aux modulateurs.';
+    }
+    verdict.innerHTML = txt;
+  }
+  input.addEventListener('input', interpret);
+  interpret();
+
+  // Active section in the index
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.toc a'));
+  if('IntersectionObserver' in window){
+    var map = {};
+    links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(a){ a.classList.remove('active'); });
+          var a = map[e.target.id]; if(a){ a.classList.add('active');
+            if(a.scrollIntoView && window.matchMedia('(max-width: 900px)').matches){ var ol = a.closest('ol'); if(ol){ ol.scrollLeft = a.offsetLeft - 20; } }
+          }
+        }
+      });
+    }, {rootMargin:'-30% 0px -60% 0px'});
+    Object.keys(map).forEach(function(id){ var s = document.getElementById(id); if(s) obs.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
